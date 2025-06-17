@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #393639;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+header, section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+section {
+    padding: 20px 20px;
+}
+
+.opener {
+    text-align: center;
+    color: white;
+}
+
+
+.opener h1 {
+    font-size: 3rem;
+    margin-bottom: 0.3rem;
+}
+
+.opener h5 {
+    font-weight: normal;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.links {
+    margin-top: 10px;
+}
+
+.links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: rgb(184, 62, 184);
+    font-weight: bold;
+}
+
+
+.links a:hover {
+    color: blue;
+}
+
+.links a:visited {
+    color: darkgray;
+}
+
+.links a:active {
+    border-bottom: 2px solid purple;
+}
+
+#about-me, #projs, #socials {
+    margin-bottom: 0.3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffccff;
+}
+
+hr.small {
+    width: 100%;
+    border: 1px solid #aaa;
+    margin: 10px 0 20px 0;
+}
+
+section p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    max-width: 900px;
+}
+
+
+.medium {
+    width: 80%;
+    margin: 20px auto;
+    border: 1px solid white;
+}
+
+.small {
+    width: 10%;
+    margin: 5px 0;
+    border: 1px solid white;
+}
+
+.social-icons {
+    width: 40px;
+    height: 40px;
+    margin-right: .8vw;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.social-icons:hover {
+    transform: scale(1.175);
+}
+
+.resume {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    color: black;
+}
+
+.resume:hover {
+    color: white;
+}
+
+.resume:active {
+    border-bottom: 2px solid blue;
+}
+
+.resume:visited {
+    color: grey;
+    border-bottom: 2px solid grey;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.project-card {
+    width: 400px;
+    height: 300px;
+    perspective: 1000px;
+}
+
+.project-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.project-card:hover .project-inner {
+    transform: rotateY(180deg);
+}
+
+.project-front, .project-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #222;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.project-front {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.project-back {
+    transform: rotateY(180deg);
+}
+
+.project-back video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 10px;
+}
+
+a img {
+    text-decoration: none;
+    border: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .project-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project-card {
+        width: 90%;
+        height: auto;
+    }
+
+    .project-back video {
+        height: auto;
+        max-height: 200px;
+    }
+
+    .opener h1 {
+        font-size: 1.8rem;
+    }
+
+    .opener h5 {
+        font-size: 1rem;
+    }
+
+    section p {
+        font-size: 1rem;
+    }
+
+    .social-icons {
+        width: 40px;
+        height: 40px;
+    }
+
+    hr.small {
+        width: 50px;
+    }
+}
