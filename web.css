@@ -154,9 +154,10 @@ section p {
     transform-style: preserve-3d;
 }
 
-.project-card:hover .project-inner {
+.project-card.flipped .project-inner {
     transform: rotateY(180deg);
 }
+
 
 .project-front, .project-back {
     position: absolute;
